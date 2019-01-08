@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+        <script src="./vue-resource.js"></script>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+
+                },
+                mounted () {
+                    // 他会在vue的prototyp上绑定一个$http对象
+                    this.$http.jsonp('http://157.122.54.189:9093/api/getprodlist')
+                        .then(function(res) {
+                            console.log(res.body)
+                        }, function(err) {
+                            console.log(err)
+                        })
+                }
+            })
+        </script>
+    </body>
+</html>

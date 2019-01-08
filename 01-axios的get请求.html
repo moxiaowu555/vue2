@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+        <script src="./axios.js"></script>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+
+                },
+                mounted () {
+                    axios.get('http://www.liulongbin.top:3005/api/getprodlist')
+                        .then((result) => {
+                            console.log(result.data.message);
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+
+                    // 传参
+                    /* axios.get('http://www.liulongbin.top:3005/api/getprodlist', {
+                        params: {
+                            id: 1235
+                        }
+                    })
+                        .then((result) => {
+                            console.log(result.data.message);
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });  */                   
+                }
+            })
+        </script>
+    </body>
+</html>

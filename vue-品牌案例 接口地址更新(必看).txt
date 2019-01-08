@@ -1,0 +1,4 @@
+
+品牌案例中的接口地址更新为http://www.liulongbin.top:3005/
+请在该接口后面添加对应的参数
+例如：品牌案例中请求接口为：http://www.liulongbin.top:3005/api/getprodlist
