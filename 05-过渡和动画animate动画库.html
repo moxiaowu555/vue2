@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+        <link rel="stylesheet" href="./animate.css">
+    </head>
+    <body>
+        <div id="app">
+            <transition 
+                enter-active-class="animated shake"
+                leave-active-class="animated flipInX"
+            >
+                <p v-if="isShow">animate动画库</p>
+            </transition>
+            <button @click="isShow = !isShow">点击开启动画和过渡</button>
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    isShow: true
+                }
+            })
+        </script>
+    </body>
+</html>

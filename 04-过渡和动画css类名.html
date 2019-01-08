@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./vue2.js"></script>
+        <style>
+            .slide-enter, .slide-leave-to {
+                padding-left: 100px;
+            }
+            .slide-enter-active, .slide-leave-active {
+                transition: all 2s;
+            }
+            .slide-enter-to, .slide-leave {
+                padding-left: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <!-- name的值，作为类名的前缀，如果没加，则默认是v-enter -->
+            <transition name="slide">
+                <p v-if="isShow">过渡和动画</p> 
+            </transition>
+            <!-- 使用内联语句 -->
+            <!-- <button @click="isShow = !isShow">点击</button> -->
+            <button @click="toggle">点击</button>
+        </div>
+        <script>
+            var vm = new Vue({
+                el: '#app',
+                data: {
+                    isShow: true
+                },
+                methods: {
+                    toggle() {
+                        this.isShow = !this.isShow;
+                    } 
+                }
+            })
+        </script>
+    </body>
+</html>
